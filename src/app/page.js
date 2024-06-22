@@ -1,8 +1,14 @@
+import SwiperMain from "@/components/swiper-main";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div>
+    <div className={"page page-main"}>
+      <section className="section-swiper-main">
+        <SwiperMain/>
+      </section>
       CONTENT
     </div>
   );
-}
+};
+
+export default Home;

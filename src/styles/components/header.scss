@@ -1,3 +1,71 @@
 .header {
-  background-color: aqua;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 5;
+
+  &__body {}
+
+  &__top {
+    border-bottom: 1px solid rgba(255, 255, 255, .102);
+
+    &-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    svg {
+      @include sm {
+        max-width: 90px;
+      }
+    }
+
+
+    &-text {
+      max-width: 17rem;
+      font-weight: 500;
+      font-size: 1.25rem;
+      color: var(--text-color-primary);
+
+      @include lg {
+        display: none;
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    @include md {
+      gap: 1.3rem;
+    }
+
+    .phone-dropdown__row-tel {
+      color: var(--text-color-primary);
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: var(--ls);
+    }
+
+    &-order {
+
+
+    }
+  }
+
+  &__phone {}
+
+  &__bottom {}
 }

@@ -1,0 +1,121 @@
+.swiper-main {
+
+  &__slide {
+    height: 800px;
+    padding: 6rem 0 0 0;
+
+    @include md {
+      height: 500px;
+    }
+
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #1212127A;
+        z-index: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__info {
+    padding: 8rem 0 5rem;
+    color: var(--text-color-primary);
+
+    @include md {
+      padding: 3rem 0;
+    }
+  }
+
+  &__title {
+    font-size: 3.3rem;
+    margin: 0 0 3rem 0;
+    max-width: 60rem;
+
+    @include lg {
+      font-size: 2.3rem;
+      max-width: 75%;
+    }
+
+    @include md {
+      font-size: 2rem;
+    }
+
+    @include sm {
+      font-size: 1.5rem;
+      max-width: none;
+    }
+  }
+
+  &__subtitle {
+    font-size: 2.3rem;
+    margin: 0 0 2rem 0;
+    max-width: 40rem;
+
+    @include lg {
+      font-size: 1.9rem;
+      max-width: 75%;
+    }
+
+    @include md {
+      font-size: 1.5rem;
+      max-width: none;
+    }
+
+    @include sm {
+      font-size: 1.2rem;
+    }
+
+  }
+
+  &__link {
+    max-width: 14rem;
+  }
+
+  .swiper-pagination {
+
+    &-bullet {
+      width: 0.7rem;
+      height: 0.7rem;
+      margin: 0 .4rem !important;
+      background-color: rgb(131, 131, 131);
+
+      @include sm {
+        width: 0.4rem;
+        height: 0.4rem;
+        margin: 0 .2rem !important;
+      }
+    }
+
+    &-bullet-active {
+      width: 0.85rem;
+      height: 0.85rem;
+      background-color: var(--color-accent);
+
+      @include sm {
+        width: 0.6rem;
+        height: 0.6rem;
+      }
+    }
+
+
+  }
+}

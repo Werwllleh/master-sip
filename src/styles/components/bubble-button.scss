@@ -1,0 +1,47 @@
+.bubble__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent);
+  width: 100%;
+  font-weight: 700;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  color: var(--text-color-primary);
+  line-height: 1;
+  white-space: nowrap;
+
+  &.small {
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem;
+  }
+
+  &.medium {
+    padding: 1rem;
+    font-size: 1.15rem;
+  }
+
+  &.large {
+    font-size: 1.25rem;
+    padding: 1.4rem 1rem;
+  }
+
+  & .bubble {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.41);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: bubble-animation 1.5s forwards;
+  }
+
+  @keyframes bubble-animation {
+    to {
+      transform: scale(25);
+      opacity: 0;
+    }
+  }
+}

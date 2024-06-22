@@ -1,0 +1,86 @@
+.phone-dropdown {
+  cursor: pointer;
+  display: inline-block;
+
+  &__row {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+
+    @include md {
+      display: none;
+    }
+
+    &-tel {
+      white-space: nowrap;
+    }
+
+    svg {
+      fill: var(--text-color-primary);
+    }
+  }
+
+  &__mobile-icon {
+    display: none;
+    padding: .3rem;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: var(--text-color-primary);
+      transform: scale(-1, 1);
+    }
+
+    @include md {
+      display: block;
+    }
+  }
+
+  &__info {
+    background-color: var(--bg-color-semidark);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    max-width: 19rem;
+    padding: 2.5rem 1.5rem;
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  &__phones {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+
+    &-tel {
+      color: var(--text-color-primary);
+    }
+  }
+
+  &__order-button {
+
+  }
+
+  &__category {
+
+    &-title {
+      color: var(--text-color-gray);
+      font-size: 1.2rem;
+      margin: 0 0 .4rem 0;
+      font-weight: 500;
+    }
+    &-text {
+      font-size: 1.15rem;
+      color: var(--text-color-primary);
+    }
+  }
+}
+
+.ant-dropdown {
+  min-width: auto !important;
+}
