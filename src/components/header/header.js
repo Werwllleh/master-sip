@@ -1,6 +1,12 @@
 import Logo from "@/components/logo/logo";
 import PhoneDropdown from "@/components/phone-dropdown";
 import BubbleButton from "@/components/bubble-button";
+import Link from "next/link";
+import {menu} from "@/utils/consts";
+import {CaretDownOutlined} from "@ant-design/icons";
+import React from "react";
+import {Dropdown} from "antd";
+import HeaderBottomLink from "@/components/header/header-bottom-link";
 
 
 const Header = () => {
@@ -28,7 +34,11 @@ const Header = () => {
         </div>
         <div className="header__bottom">
           <div className="container">
-            <div className="header__bottom-body"></div>
+            <div className="header__bottom-body">
+              <ul className="header__bottom-links">
+                {menu.map((link) => <HeaderBottomLink link={link} />)}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

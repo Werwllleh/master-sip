@@ -1,5 +1,5 @@
 import "../styles/index.scss";
-import Header from "@/components/header";
+import Header from "@/components/header/header";
 import Footer from "@/components/footer";
 
 export const metadata = {

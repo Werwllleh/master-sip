@@ -1,0 +1,36 @@
+.header__link {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-item {
+    letter-spacing: var(--ls);
+    padding: .8rem 1.3rem;
+    color: var(--text-color-primary);
+    font-weight: 500;
+    font-size: 1.05rem;
+  }
+
+}
+
+.header__dropdown-list {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: .5rem;
+  border-radius: var(--border-radius);
+  background-color: var(--bg-color-semidark);
+  padding: .85rem 2.4rem .85rem 1.1rem;
+
+  &-item {}
+
+  &-link {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--text-color-primary);
+    letter-spacing: var(--ls);
+    font-weight: 500;
+    max-width: 10.5rem;
+  }
+}

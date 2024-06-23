@@ -67,5 +67,16 @@
 
   &__phone {}
 
-  &__bottom {}
+  &__bottom {
+    border-bottom: 1px solid rgba(255, 255, 255, .102);
+
+    &-body {}
+  }
+
+  &__bottom-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+  }
 }
