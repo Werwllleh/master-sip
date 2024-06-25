@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 
 import {swiperMainSlides} from "@/utils/consts";
 import BubbleButton from "@/components/bubble-button";
-import Link from "next/link";
+
 
 const SwiperMain = () => {
   return (
@@ -34,8 +34,8 @@ const SwiperMain = () => {
                     <h1 className="swiper-main__title">{slide.title}</h1>
                     <h2 className="swiper-main__subtitle">{slide.subtitle}</h2>
                     <div className="swiper-main__link">
-                      <BubbleButton size={'medium'}>
-                        <Link href={slide.link[0]}>{slide.link[1]}</Link>
+                      <BubbleButton link={slide.link[0]} size={'medium'}>
+                        {slide.link[1]}
                       </BubbleButton>
                     </div>
                   </div>

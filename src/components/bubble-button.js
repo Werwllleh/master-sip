@@ -1,7 +1,8 @@
 'use client';
 import React, {useEffect, useRef, useState} from 'react';
+import Link from "next/link";
 
-const BubbleButton = ({children, size}) => {
+const BubbleButton = ({children, size, link}) => {
 
   const bubbleBtn = useRef();
   const lastBubbleTimeRef = useRef(Date.now());
@@ -39,16 +40,33 @@ const BubbleButton = ({children, size}) => {
   }, [bubbles]);
 
   return (
-    <button ref={bubbleBtn} onMouseOver={mouseMove} className={`bubble__button ${size ? size : 'small'}`}>
-      {children}
-      {bubbles.map(bubble => (
-        <span
-          key={bubble.id}
-          className="bubble"
-          style={{ left: `${bubble.left}px`, top: `${bubble.top}px` }}
-        />
-      ))}
-    </button>
+    <>
+      {
+        link ? (
+          <Link href={link} ref={bubbleBtn} onMouseOver={mouseMove} className={`bubble__button ${size ? size : 'small'}`}>
+            {children}
+            {bubbles.map(bubble => (
+              <span
+                key={bubble.id}
+                className="bubble"
+                style={{ left: `${bubble.left}px`, top: `${bubble.top}px` }}
+              />
+            ))}
+          </Link>
+        ) : (
+          <button ref={bubbleBtn} onMouseOver={mouseMove} className={`bubble__button ${size ? size : 'small'}`}>
+            {children}
+            {bubbles.map(bubble => (
+              <span
+                key={bubble.id}
+                className="bubble"
+                style={{ left: `${bubble.left}px`, top: `${bubble.top}px` }}
+              />
+            ))}
+          </button>
+        )
+      }
+    </>
   );
 };
 
