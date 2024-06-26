@@ -33,7 +33,7 @@ const Header = () => {
           <div className="container">
             <div className="header__bottom-body">
               <ul className="header__bottom-links">
-                {menu.map((link) => <HeaderBottomLink link={link} />)}
+                {menu.map((link, index) => <HeaderBottomLink key={index} link={link} />)}
               </ul>
             </div>
           </div>
