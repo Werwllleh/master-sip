@@ -1,11 +1,24 @@
 
 :root {
+  //Цвета текстов
   --text-color-primary: #ffffff;
   --text-color-secondary: #333333;
   --text-color-gray: #9b9b9b;
+
+
+  //Параметры текстов
+  --ls: 0.015rem;
+
+  //Цвета фона сайта
   --bg-color-semidark: #2f2f2f;
   --bg-color-dark: #121212;
+
+
+  //Цвета сайта
+  --color-white: #ffffff;
   --color-accent: rgb(255, 114, 0);
+
+
+  //Прочие параметры
   --border-radius: 0.5rem;
-  --ls: 0.015rem
 }

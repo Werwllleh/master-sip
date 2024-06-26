@@ -19,10 +19,14 @@ const HeaderBottomLink = ({link}) => {
             </ul>
           )}
         >
-          <Link className="header__link-item" href={link.baseUrl.url}>{link.baseUrl.text}</Link>
+          <Link className="header__link-item" href={link.baseUrl.url}>
+            <span>{link.baseUrl.text}</span>
+          </Link>
         </Dropdown>
       ) : (
-        <Link className="header__link-item" href={link.baseUrl.url}>{link.baseUrl.text}</Link>
+        <Link className="header__link-item" href={link.baseUrl.url}>
+          <span>{link.baseUrl.text}</span>
+        </Link>
       )}
     </li>
   );

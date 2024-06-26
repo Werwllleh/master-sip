@@ -1,11 +1,8 @@
 import Logo from "@/components/logo/logo";
 import PhoneDropdown from "@/components/phone-dropdown";
 import BubbleButton from "@/components/bubble-button";
-import Link from "next/link";
 import {menu} from "@/utils/consts";
-import {CaretDownOutlined} from "@ant-design/icons";
 import React from "react";
-import {Dropdown} from "antd";
 import HeaderBottomLink from "@/components/header/header-bottom-link";
 
 
