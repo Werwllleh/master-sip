@@ -1,5 +1,5 @@
 'use client'
-import {CaretDownOutlined, PhoneFilled} from '@ant-design/icons';
+import {PhoneFilled} from '@ant-design/icons';
 import {Dropdown} from 'antd';
 import {email, phones} from "@/utils/consts";
 import BubbleButton from "@/components/bubble-button";
@@ -38,10 +38,7 @@ const PhoneDropdown = () => {
     >
       <div onClick={(e) => e.preventDefault()}>
         <div className="phone-dropdown__row">
-          {phones.map((phone, index) => (
-            index === 0 && <span className="phone-dropdown__row-tel" key={index}>{phone.telView}</span>
-          ))}
-          <CaretDownOutlined />
+          <PhoneFilled />
         </div>
         <div className="phone-dropdown__mobile-icon">
           <PhoneFilled />

@@ -8,6 +8,7 @@
 
   //Параметры текстов
   --ls: 0.015rem;
+  --ls-01: 0.1rem;
 
   //Цвета фона сайта
   --bg-color-semidark: #2f2f2f;
@@ -17,8 +18,14 @@
   //Цвета сайта
   --color-white: #ffffff;
   --color-accent: rgb(255, 114, 0);
+  --overlay-color: rgba(24, 39, 51 , 0.85);
+  --color-semidark-transparent: rgba(47, 47, 47, 0.93);
 
 
   //Прочие параметры
   --border-radius: 0.5rem;
+  --transEIO3: .3s easy-in-out;
+  --transL3: .3s linear;
+  --menu-speed: 0.75s;
+  --primary-color: #ffaeae;
 }

@@ -11,6 +11,10 @@
   &__top {
     border-bottom: 1px solid rgba(255, 255, 255, .102);
 
+    @include md {
+      border-bottom: none;
+    }
+
     &-body {
       display: flex;
       align-items: center;
@@ -32,9 +36,10 @@
 
 
     &-text {
-      max-width: 17rem;
-      font-weight: 500;
+      max-width: 21rem;
+      font-weight: 600;
       font-size: 1.25rem;
+      letter-spacing: var(--ls-01);
       color: var(--text-color-primary);
 
       @include lg {
@@ -61,16 +66,31 @@
 
     &-order {
 
+      @include md {
+        display: none;
+      }
 
     }
   }
 
   &__phone {}
 
+  &__burger {
+    display: none;
+
+    @include md {
+      display: block;
+    }
+  }
+
   &__bottom {
     border-bottom: 1px solid rgba(255, 255, 255, .102);
 
     &-body {}
+
+    @include md {
+      display: none;
+    }
   }
 
   &__bottom-links {

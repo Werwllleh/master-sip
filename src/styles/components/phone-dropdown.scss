@@ -1,11 +1,14 @@
 .phone-dropdown {
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__row {
     display: inline-flex;
     align-items: center;
     gap: .5rem;
+
 
     @include md {
       display: none;
@@ -16,7 +19,10 @@
     }
 
     svg {
+      width: 30px;
+      height: 30px;
       fill: var(--text-color-primary);
+      transform: scale(-1, 1);
     }
   }
 
@@ -37,7 +43,7 @@
   }
 
   &__info {
-    background-color: var(--bg-color-semidark);
+    background-color: var(--color-semidark-transparent);
     border-radius: var(--border-radius);
     overflow: hidden;
     max-width: 19rem;
@@ -60,10 +66,20 @@
     &-tel {
       color: var(--text-color-primary);
     }
+
+    @include sm {
+      font-size: 1rem;
+    }
   }
 
   &__order-button {
 
+    @include sm {
+      .bubble__button.small {
+        padding: 0.8rem;
+        font-size: 1rem;
+      }
+    }
   }
 
   &__category {
@@ -73,14 +89,19 @@
       font-size: 1.2rem;
       margin: 0 0 .4rem 0;
       font-weight: 500;
+
+      @include sm {
+        font-size: 1rem;
+      }
     }
     &-text {
       font-size: 1.15rem;
       color: var(--text-color-primary);
+
+      @include sm {
+        font-size: 1rem;
+      }
     }
   }
 }
 
-.ant-dropdown {
-  min-width: auto !important;
-}

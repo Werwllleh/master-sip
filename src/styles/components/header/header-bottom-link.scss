@@ -10,6 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     overflow: hidden;
     position: relative;
     letter-spacing: var(--ls);
@@ -19,6 +20,11 @@
     font-size: 1.05rem;
     transition: border 600ms cubic-bezier(0.19, 1, 0.22, 1);
     border: 1px solid transparent;
+    white-space: nowrap;
+
+    @include lg {
+      padding: .8rem .8rem;
+    }
 
     &:after {
       background: #fff;
@@ -47,7 +53,8 @@
       z-index: 1;
     }
 
-    &:hover {
+    &:hover,
+    &.active {
       border: 1px solid var(--color-white);
 
       &:after {
@@ -68,18 +75,16 @@
   align-items: flex-start;
   flex-direction: column;
   gap: .5rem;
-  border-radius: var(--border-radius);
-  background-color: var(--bg-color-semidark);
+  background-color: var(--color-semidark-transparent);
   padding: .85rem 2.4rem .85rem 1.1rem;
 
   &-item {}
 
   &-link {
     display: block;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     color: var(--text-color-primary);
     letter-spacing: var(--ls);
     font-weight: 500;
-    max-width: 10.5rem;
   }
 }
