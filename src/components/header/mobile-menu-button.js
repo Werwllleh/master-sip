@@ -22,7 +22,7 @@ const MobileMenuButton = () => {
             <ul className="mobile-menu__list">
               {menu.map((link) => (
                 <li key={link.baseUrl.url} className="mobile-menu__list-item">
-                  <Link className="mobile-menu__list-link" href={link.baseUrl.url}>
+                  <Link onClick={() => setOpen(false)} className="mobile-menu__list-link" href={link.baseUrl.url}>
                     {link.baseUrl.text}
                   </Link>
                 </li>))}
