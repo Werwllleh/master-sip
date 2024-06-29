@@ -1,4 +1,5 @@
 import SwiperMain from "@/components/swiper-main";
+import SectionAchievements from "@/components/sections/section-achievements";
 
 const Home = () => {
   return (
@@ -6,6 +7,7 @@ const Home = () => {
       <section className="section-swiper-main">
         <SwiperMain/>
       </section>
+      <SectionAchievements />
       CONTENT
     </div>
   );

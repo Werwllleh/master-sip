@@ -1,0 +1,34 @@
+.achievement {
+  padding: 1.5rem .3rem;
+
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__icon {
+
+    svg {
+      width: 60px;
+      height: 60px;
+      stroke: var(--color-accent);
+      fill: var(--color-accent);
+    }
+  }
+
+  &__info {}
+
+  &__title {
+    font-size: 1.25rem;
+    margin: 0 0 .5rem;
+  }
+
+  &__text {
+    font-size: 1rem;
+    span {
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+  }
+}
