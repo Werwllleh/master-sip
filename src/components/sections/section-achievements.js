@@ -13,22 +13,35 @@ const SectionAchievements = () => {
         <div className="section-achievements__body">
           <Swiper
             loop={true}
+            spaceBetween={15}
             breakpoints={{
               320: {
-                slidesPerView: 1,
+                slidesPerView: 1.2,
+                centeredSlides: true
               },
               480: {
                 slidesPerView: 1.3,
+                centeredSlides: false
               },
-              // Дополнительные брейкпоинты можно добавить здесь
               550: {
+                slidesPerView: 1.7,
+                centeredSlides: false
+              },
+              650: {
                 slidesPerView: 2.1,
+                centeredSlides: false
               },
               768: {
-                slidesPerView: 3.1,
+                slidesPerView: 2.6,
+                centeredSlides: false
               },
-              1150: {
+              950: {
+                slidesPerView: 3.1,
+                centeredSlides: false
+              },
+              1300: {
                 slidesPerView: 4,
+                centeredSlides: false
               },
             }}
           >

@@ -1,10 +1,13 @@
 .achievement {
-  padding: 1.5rem .3rem;
 
   &__body {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+
+    @include sm {
+      gap: 0.5rem;
+    }
   }
 
   &__icon {
@@ -22,6 +25,10 @@
   &__title {
     font-size: 1.25rem;
     margin: 0 0 .5rem;
+
+    @include sm {
+      font-size: 1.05rem;
+    }
   }
 
   &__text {
@@ -29,6 +36,10 @@
     span {
       color: var(--color-accent);
       font-weight: 700;
+    }
+
+    @include sm {
+      font-size: 0.95rem;
     }
   }
 }

@@ -1,17 +1,26 @@
 .section-achievements {
 
   &__body {
-    padding: 5rem 0;
+    padding: 3rem 0;
+
+    @include sm {
+      padding: 1.5rem 0;
+    }
 
     .swiper-wrapper {
       align-items: stretch;
     }
 
     .swiper-slide {
+      height: auto;
     }
   }
 
   &__item {
-
+    height: 100%;
+    padding: 1.5rem .3rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: #F7F7F7FF;
   }
 }
