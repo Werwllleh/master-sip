@@ -13,27 +13,27 @@ export const email = 'test@master-sip.ru';
 
 export const swiperMainSlides = [
   {
-    title: 'Строительство домов из СИП-панелей в Чебоксарах',
-    subtitle: 'на Вашем участке за 30 дней по цене однокомнатной квартиры',
-    link: ['/projects', 'Проекты'],
+    title: <>Строительство домов из&nbsp;СИП-панелей в&nbsp;Чебоксарах</>,
+    subtitle: <>на&nbsp;Вашем участке за&nbsp;30 дней по&nbsp;цене однокомнатной квартиры</>,
+    link: ['/catalog', 'Проекты'],
     photo: 1,
   },
   {
-    title: 'Строительство домов из СИП-панелей в Чебоксарах',
-    subtitle: 'на Вашем участке за 30 дней по цене однокомнатной квартиры',
-    link: ['/projects', 'Проекты'],
+    title: <>30&nbsp;лет на&nbsp;рынке стрительства домов&nbsp;из&nbsp;СИП-панелей</>,
+    subtitle: <>100500 довольных клиентов в&nbsp;нескольких регионах</>,
+    link: ['/about', 'О компании'],
     photo: 2,
   },
   {
-    title: 'Строительство домов из СИП-панелей в Чебоксарах',
-    subtitle: 'на Вашем участке за 30 дней по цене однокомнатной квартиры',
-    link: ['/projects', 'Проекты'],
+    title: <>Строительство домов из&nbsp;СИП-панелей в&nbsp;Чебоксарах</>,
+    subtitle: <>на&nbsp;Вашем участке за&nbsp;30 дней по&nbsp;цене однокомнатной квартиры</>,
+    link: ['/catalog', 'Проекты'],
     photo: 3,
   },
   {
-    title: 'Строительство домов из СИП-панелей в Чебоксарах',
-    subtitle: 'на Вашем участке за 30 дней по цене однокомнатной квартиры',
-    link: ['/projects', 'Проекты'],
+    title: <>Строительство домов из&nbsp;СИП-панелей в&nbsp;Чебоксарах</>,
+    subtitle: <>на&nbsp;Вашем участке за&nbsp;30 дней по&nbsp;цене однокомнатной квартиры</>,
+    link: ['/catalog', 'Проекты'],
     photo: 4,
   },
 ]
@@ -134,7 +134,8 @@ export const menu = [
 export const achievements = [
   {
     icon: <>
-      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="60.000000pt" height="50.000000pt" viewBox="0 0 60.000000 50.000000" preserveAspectRatio="xMidYMid meet">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="60.000000pt" height="50.000000pt"
+           viewBox="0 0 60.000000 50.000000" preserveAspectRatio="xMidYMid meet">
 
         <g transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)" stroke="none">
           <path d="M307 458 c-23 -17 -27 -17 -27 -4 0 11 -9 16 -30 16 -29 0 -30 -2
@@ -163,7 +164,8 @@ l23 27 113 -17 114 -18 44 22 c108 55 144 91 117 117 -11 11 -20 10 -58 -6
   },
   {
     icon: <>
-      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="60.000000pt" height="50.000000pt" viewBox="0 0 60.000000 50.000000" preserveAspectRatio="xMidYMid meet">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="60.000000pt" height="50.000000pt"
+           viewBox="0 0 60.000000 50.000000" preserveAspectRatio="xMidYMid meet">
 
         <g transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)" stroke="none">
           <path d="M240 451 c0 -46 2 -51 22 -51 20 0 20 -1 5 -18 -10 -10 -17 -28 -17
@@ -189,7 +191,8 @@ m-357 -68 c4 -20 -25 -34 -40 -19 -15 15 -1 44 19 40 10 -2 19 -11 21 -21z"></path
   },
   {
     icon: <>
-      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="60.000000pt" height="50.000000pt" viewBox="0 0 60.000000 50.000000" preserveAspectRatio="xMidYMid meet">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="60.000000pt" height="50.000000pt"
+           viewBox="0 0 60.000000 50.000000" preserveAspectRatio="xMidYMid meet">
 
         <g transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)" stroke="none">
           <path d="M254 464 c-21 -16 -51 -27 -90 -32 l-59 -7 -3 -54 c-8 -143 42 -269
@@ -215,7 +218,8 @@ m-357 -68 c4 -20 -25 -34 -40 -19 -15 15 -1 44 19 40 10 -2 19 -11 21 -21z"></path
   },
   {
     icon: <>
-      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="60.000000pt" height="50.000000pt" viewBox="0 0 60.000000 50.000000" preserveAspectRatio="xMidYMid meet">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="60.000000pt" height="50.000000pt"
+           viewBox="0 0 60.000000 50.000000" preserveAspectRatio="xMidYMid meet">
 
         <g transform="translate(0.000000,50.000000) scale(0.100000,-0.100000)" stroke="none">
           <path d="M174 466 c-3 -7 -4 -35 -2 -62 l3 -49 89 -3 c53 -2 93 1 100 8 7 7

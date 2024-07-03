@@ -37,7 +37,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  font-family: "Helvetica", sans-serif;
+  font-family: var(--font-inter);
   font-weight: 400;
   min-width: 375px;
   overflow-x: hidden;

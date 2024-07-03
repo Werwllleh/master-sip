@@ -4,13 +4,13 @@ import Footer from "@/components/footer";
 
 export const metadata = {
   title: "MASTER SIP",
-  description: "Строительство домой из SIP панелей",
+  description: "Строительство домов из SIP панелей в Поволжье",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
-      <body>
+      <body >
         <Header />
         <main>
           {children}

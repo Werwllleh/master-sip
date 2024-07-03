@@ -1,5 +1,11 @@
 .section-achievements {
 
+  @include sm {
+    .container {
+      padding: 0;
+    }
+  }
+
   &__body {
     padding: 3rem 0;
 
