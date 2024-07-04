@@ -37,6 +37,12 @@ const Header = () => {
     }
   }, [scroll]);
 
+  useEffect(() => {
+    // Check scroll position on mount
+    handleScroll();
+  }, []);
+
+
   return (
     <>
       <header className={`header ${headerScroll ? 'header--scroll' : ''}`}>
@@ -66,7 +72,11 @@ const Header = () => {
             <div className="container">
               <div className="header__bottom-body">
                 <ul className="header__bottom-links">
-                  {menu.map((link, index) => <HeaderBottomLink key={index} link={link}/>)}
+                  {
+                    Object.values(menu).map((link, index) => {
+                      return <HeaderBottomLink key={index} link={link}/>
+                    })
+                  }
                 </ul>
               </div>
             </div>

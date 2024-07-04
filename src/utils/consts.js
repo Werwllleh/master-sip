@@ -38,8 +38,8 @@ export const swiperMainSlides = [
   },
 ]
 
-export const menu = [
-  {
+export const menu = {
+  company: {
     baseUrl: {
       text: 'Компания',
       url: '/company'
@@ -67,10 +67,10 @@ export const menu = [
       },
     ]
   },
-  {
+  projects: {
     baseUrl: {
       text: 'Типовые проекты',
-      url: '/catalog'
+      url: '/projects'
     },
     childLinks: [
       {
@@ -87,25 +87,25 @@ export const menu = [
       }
     ]
   },
-  {
+  services: {
     baseUrl: {
       text: 'Услуги',
       url: '/services'
     }
   },
-  {
+  catalog: {
     baseUrl: {
       text: 'Наши работы',
-      url: '/projects'
+      url: '/catalog'
     }
   },
-  {
+  contacts: {
     baseUrl: {
       text: 'Контакты',
       url: '/contacts'
     }
   },
-  {
+  info: {
     baseUrl: {
       text: 'Информация',
       url: '/info'
@@ -128,8 +128,8 @@ export const menu = [
         url: '/faq'
       }
     ]
-  },
-]
+  }
+}
 
 export const achievements = [
   {

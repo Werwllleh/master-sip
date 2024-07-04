@@ -9,9 +9,7 @@ const SectionHeader = ({title, linkTitle, url}) => {
         <h3 className="section-header__title">{title}</h3>
         <Link className="section-header__link" href={url}>
           {linkTitle}
-          <span>
-            <ArrowRightOutlined />
-          </span>
+          <ArrowRightOutlined />
         </Link>
       </div>
     </div>

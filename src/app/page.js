@@ -4,7 +4,7 @@ import SectionCatalog from "@/components/sections/section-catalog";
 
 const Home = () => {
   return (
-    <div className={"page page-main"}>
+    <div className="page page-main">
       <section className="section-swiper-main">
         <SwiperMain/>
       </section>
