@@ -74,16 +74,19 @@ export const menu = {
     },
     childLinks: [
       {
-        text: 'Одноэтажные дома',
-        url: '/one-storey'
+        text: <>Одноэтажные дома</>,
+        url: '/one-storey',
+        photo: 'one-storey.jpg'
       },
       {
-        text: 'Одноэтажные дома c мансардой',
-        url: '/one-storey-attic'
+        text: <>Одноэтажные дома c&nbsp;мансардой</>,
+        url: '/one-storey-attic',
+        photo: 'one-storey-attic.jpg'
       },
       {
-        text: 'Двухэтажные дома',
-        url: '/two-storey'
+        text: <>Двухэтажные дома</>,
+        url: '/two-storey',
+        photo: 'two-storey.jpg'
       }
     ]
   },

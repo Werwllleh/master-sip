@@ -5,12 +5,21 @@
     align-items: flex-end;
     justify-content: space-between;
     gap: 1rem;
+
+    @include sm {
+      align-items: center;
+    }
   }
 
   &__title {
     font-size: 2.5rem;
-    line-height: 3.125rem;
+    white-space: nowrap;
+    line-height: 1.15;
     font-weight: 700;
+
+    @include sm {
+      font-size: 1.8rem;
+    }
   }
 
   &__link {
@@ -19,6 +28,7 @@
     align-items: center;
     font-weight: 400;
     transition: padding .3s ease-in-out;
+    white-space: nowrap;
 
     &::after {
       content: '';
@@ -38,17 +48,28 @@
       right: 0.5rem;
       bottom: 0;
       margin: auto 0;
-      z-index: -1;
+      z-index: 0;
       opacity: 0;
       transition: right .5s ease-in-out, opacity .5s ease-in-out;
+
+      @include sm {
+        opacity: 1;
+        right: 0;
+      }
     }
 
     &:hover {
 
       padding: 0 20px 0 0;
 
+      @include sm {
+        padding: 0;
+      }
+
       &::after {
         width: calc(100% - 20px);
+
+
       }
 
       span {
@@ -60,6 +81,15 @@
     svg {
       fill: var(--color-accent);
     }
+
+    p {
+      @include sm {
+        opacity: 0;
+        width: 0;
+      }
+    }
+
+
   }
 
 }

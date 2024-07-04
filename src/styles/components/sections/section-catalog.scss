@@ -1,11 +1,103 @@
 .section-catalog {
 
-  &__body {}
+  &__body {
+    padding: 3rem 0 5rem;
 
-  &__header {
-    margin: 0 0 50px 0;
+    @include md {
+      padding: 3rem 0;
+    }
   }
 
-  &__content {}
+  &__header {
+    margin: 0 0 3.125rem 0;
+
+    @include md {
+      margin: 0 0 2rem 0;
+    }
+  }
+
+  &__content {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    @include xl {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include md {
+      grid-template-columns: 1fr;
+    }
+
+    @include sm {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow: auto;
+      margin: 0 -1.06rem;
+      padding: 0 1.06rem;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+
+    }
+  }
+
+  &__item {
+    position: relative;
+    height: 18.75rem;
+    width: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
+    @include sm {
+      height: 14rem;
+      min-width: 23rem;
+    }
+
+    &-title {
+      position: absolute;
+      left: 1.56rem;
+      bottom: 1.56rem;
+      font-size: 1.55rem;
+      max-width: 15rem;
+      font-weight: 500;
+      z-index: 1;
+      color: var(--text-color-primary);
+      pointer-events: none;
+    }
+
+    &-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(39 39 39 / 0.25);
+        transition: background-color .3s ease-in-out;
+      }
+    }
+
+    &:hover &-link::after {
+      background-color: rgba(39, 39, 39, 0.57);
+    }
+
+  }
 
 }
