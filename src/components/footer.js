@@ -38,7 +38,7 @@ const Footer = () => {
               <ul className="footer-center__info">
                 {Object.values(menu.info.childLinks).map((link) => {
                   return (
-                    <li className="footer-center__info-item"><Link
+                    <li key={link.url} className="footer-center__info-item"><Link
                       href={menu.info.baseUrl.url + link.url}>{link.text}</Link></li>
                   )
                 })}
@@ -49,7 +49,7 @@ const Footer = () => {
                 <h5>Всегда на связи</h5>
                 <div className="footer-center__phones-items">
                   {contactInfo.phones.map((phone) => {
-                    return <Link className="footer-center__phones-item" href={`tel:${phoneNumber(phone)}`}>{phone}</Link>
+                    return <Link key={phoneNumber(phone)} className="footer-center__phones-item" href={`tel:${phoneNumber(phone)}`}>{phone}</Link>
                   })}
                 </div>
               </div>
