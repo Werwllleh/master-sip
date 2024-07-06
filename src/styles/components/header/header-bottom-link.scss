@@ -71,14 +71,35 @@
 }
 
 .header__dropdown-list {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: .5rem;
   background-color: var(--color-semidark-transparent);
-  padding: .85rem 2.4rem .85rem 1.1rem;
+  //padding: .85rem 1.1rem;
 
-  &-item {}
+  &--light {
+    background-color: rgba(255, 255, 255, 0.96);
+
+    .header__dropdown-list-link {
+      color: var(--color-semidark);
+    }
+
+    .header__dropdown-list-item {
+
+
+      &:hover {
+        background-color: var(--color-accent-transparent);
+
+        .header__dropdown-list-link {
+          color: var(--text-color-primary);
+        }
+
+      }
+    }
+  }
+
+  &-item {
+
+    transition: background-color .3s ease-in-out;
+
+  }
 
   &-link {
     display: block;
@@ -86,5 +107,6 @@
     color: var(--text-color-primary);
     letter-spacing: var(--ls);
     font-weight: 500;
+    padding: 0.5rem 1.1rem;
   }
 }

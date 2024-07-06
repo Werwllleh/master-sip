@@ -11,6 +11,8 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-size: 16px;
+  background-color: var(--color-white) !important;
+  color: var(--color-semidark) !important;
 }
 
 
@@ -21,7 +23,6 @@ h2,
 h3,
 h4,
 p,
-ul[class],
 ol[class],
 li,
 figure,
@@ -97,6 +98,7 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+  transition: color .3s ease-in-out;
 }
 
 

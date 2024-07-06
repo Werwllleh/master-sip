@@ -8,12 +8,15 @@ import HeaderBottomLink from "@/components/header/header-bottom-link";
 import MobileMenu from "@/components/header/mobile-menu";
 import MobileMenuButton from "@/components/header/mobile-menu-button";
 import {useEffect, useState} from "react";
-
+import {usePathname} from "next/navigation";
 
 const Header = () => {
 
   const [scroll, setScroll] = useState(0);
   const [headerScroll, setHeaderScroll] = useState(false);
+
+
+  const pathname = usePathname()
 
 
   const handleScroll = () => {
@@ -38,14 +41,13 @@ const Header = () => {
   }, [scroll]);
 
   useEffect(() => {
-    // Check scroll position on mount
     handleScroll();
   }, []);
 
 
   return (
     <>
-      <header className={`header ${headerScroll ? 'header--scroll' : ''}`}>
+      <header className={`header ${pathname !== '/' ? 'header--color' : ''} ${headerScroll && pathname === '/' ? 'header--scroll' : ''}`}>
         <div className="header__body">
           <div className="header__top">
             <div className="container">

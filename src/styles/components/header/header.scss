@@ -20,6 +20,73 @@
     z-index: -1;
   }
 
+  &--color {
+    box-shadow: 0px 3px 13px -2px rgba(149, 149, 149, 0.8);
+
+    .header__top {
+      background-color: var(--color-grey-light);
+
+      @include md {
+        background-color: var(--color-accent);
+        box-shadow: 0px 3px 13px -2px rgb(149 149 149 / 80%);
+      }
+
+      .header__logo-text {
+        color: var(--color-semidark);
+      }
+
+      .header__logo {
+
+        svg {
+          g {
+            fill: var(--color-semidark);
+          }
+        }
+
+        @include md {
+          svg {
+            g {
+              fill: var(--color-white);
+            }
+          }
+        }
+      }
+
+      .phone-dropdown__row {
+        svg {
+          fill: var(--color-semidark);
+        }
+
+      }
+
+
+    }
+
+    .header__bottom {
+      background-color: var(--color-accent);
+      border: none;
+    }
+
+    .phone-dropdown__mobile-icon {
+      svg {
+        fill: var(--color-semidark);
+      }
+      @include md {
+        svg {
+          fill: var(--color-white);
+        }
+      }
+    }
+
+    .hamburger__line {
+      background-color: var(--color-semidark);
+      @include md {
+        background-color: var(--color-white);
+      }
+    }
+
+  }
+
   &--scroll {
     box-shadow: 0 8px 13px -1px #00000030;
 
@@ -52,7 +119,7 @@
     gap: 1rem;
 
     svg {
-      @include sm {
+      @include md {
         max-width: 90px;
       }
     }

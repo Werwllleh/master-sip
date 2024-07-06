@@ -11,6 +11,7 @@ import BubbleButton from "@/components/bubble-button";
 
 
 const SwiperMain = () => {
+
   return (
     <div className={"swiper-main"}>
       <Swiper
@@ -21,7 +22,8 @@ const SwiperMain = () => {
         navigation
         pagination={{ clickable: true, enabled: true }}
         spaceBetween={0}
-        slidesPerView={1}
+        slidesPerView="auto"
+        slidesPerGroup={1}
         // onSlideChange={() => console.log('slide change')}
         // onSwiper={(swiper) => console.log(swiper)}
       >

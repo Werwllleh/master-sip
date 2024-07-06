@@ -29,6 +29,7 @@
     font-weight: 400;
     transition: padding .3s ease-in-out;
     white-space: nowrap;
+    color: var(--color-semidark);
 
     &::after {
       content: '';
@@ -46,7 +47,7 @@
       position: absolute;
       top: 0;
       right: 0.5rem;
-      bottom: 0;
+      bottom: -8px;
       margin: auto 0;
       z-index: 0;
       opacity: 0;

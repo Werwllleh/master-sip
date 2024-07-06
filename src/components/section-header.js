@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import {ArrowRightOutlined} from "@ant-design/icons";
+import {RightOutlined} from "@ant-design/icons";
 
 const SectionHeader = ({title, linkTitle, url}) => {
   return (
@@ -9,7 +9,7 @@ const SectionHeader = ({title, linkTitle, url}) => {
         <h3 className="section-header__title">{title}</h3>
         <Link className="section-header__link" href={url}>
           <p>{linkTitle}</p>
-          <ArrowRightOutlined />
+          <RightOutlined />
         </Link>
       </div>
     </div>

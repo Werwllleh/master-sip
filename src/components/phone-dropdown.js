@@ -1,8 +1,9 @@
 'use client'
 import {PhoneFilled} from '@ant-design/icons';
 import {Dropdown} from 'antd';
-import {email, phones} from "@/utils/consts";
+import {contactInfo} from "@/utils/consts";
 import BubbleButton from "@/components/bubble-button";
+import {phoneNumber} from "@/utils/functions";
 
 const PhoneDropdown = () => {
   return (
@@ -13,24 +14,24 @@ const PhoneDropdown = () => {
         <div className={'phone-dropdown__info'}>
           <div className="phone-dropdown__info-body">
             <div className="phone-dropdown__phones">
-              {phones.map((phone, index) => (
-                <a className="phone-dropdown__phones-tel" href={`tel:${phone.tel}`} key={index}>{phone.telView}</a>
-              ))}
+              {contactInfo.phones.map((phone) => {
+                return <a className="phone-dropdown__phones-tel" href={`tel:${phoneNumber(phone)}`} key={phoneNumber(phone)}>{phone}</a>
+              })}
             </div>
             <div className="phone-dropdown__order-button">
               <BubbleButton size={'small'}>Заказать звонок</BubbleButton>
             </div>
             <div className="phone-dropdown__category">
               <h4 className="phone-dropdown__category-title">E-mail</h4>
-              <a href={`mailto:${email}`} className="phone-dropdown__category-text">{email}</a>
+              <a href={`mailto:${contactInfo.email}`} className="phone-dropdown__category-text">{contactInfo.email}</a>
             </div>
             <div className="phone-dropdown__category">
               <h4 className="phone-dropdown__category-title">Адрес</h4>
-              <a target={"_blank"} href={'https://yandex.ru/maps/-/CDvkYR8Z'} className="phone-dropdown__category-text">Респ. Чувашия, г. Чебоксары, улица Беззубова, 9</a>
+              <a target={"_blank"} href={contactInfo.address.url} className="phone-dropdown__category-text">{contactInfo.address.text}</a>
             </div>
             <div className="phone-dropdown__category">
               <h4 className="phone-dropdown__category-title">Режим работы</h4>
-              <p className="phone-dropdown__category-text">Пн - Вс: 9:00 - 18:00</p>
+              <p className="phone-dropdown__category-text">{contactInfo.workTime}</p>
             </div>
           </div>
         </div>

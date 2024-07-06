@@ -4,7 +4,7 @@ const Logo = ({height, width, hex}) => {
   return (
     <Link href={"/"}>
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-           width={width} height={height} viewBox={`0 0 2000.000000 1500.000000`}
+           width={width} height={height} viewBox="0 0 2000.000000 1500.000000"
            preserveAspectRatio="xMidYMid meet">
 
         <g transform="translate(0.000000,1500.000000) scale(0.100000,-0.100000)"
