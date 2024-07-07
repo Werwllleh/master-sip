@@ -6,7 +6,7 @@ const SectionHeader = ({title, linkTitle, url}) => {
   return (
     <div className="section-header">
       <div className="section-header__body">
-        <h3 className="section-header__title">{title}</h3>
+        <h2 className="section-header__title section-title">{title}</h2>
         <Link className="section-header__link" href={url}>
           <p>{linkTitle}</p>
           <RightOutlined />

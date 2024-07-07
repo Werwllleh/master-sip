@@ -1,0 +1,59 @@
+.accordion {
+  border-radius: 0;
+  font-family: inherit;
+
+  .ant-collapse-header {
+    align-items: center !important;
+    background-color: var(--color-grey-light);
+  }
+
+  .ant-collapse-header-text {
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--color-semidark);
+
+    @include sm {
+      font-size: 1rem;
+    }
+  }
+
+  .ant-collapse-item-active {
+
+    .ant-collapse-expand-icon {
+
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .ant-collapse-expand-icon {
+
+    svg {
+      fill: var(--color-accent);
+    }
+  }
+
+  .ant-collapse-content-box {
+    padding: 1.4rem 1rem !important;
+  }
+
+  &__content {
+
+    p {
+      color: var(--color-semidark);
+      font-weight: 400;
+      font-size: 1rem;
+      text-align: justify;
+
+      @include sm {
+        font-size: 0.9rem;
+      }
+
+      &:not(:last-child) {
+        margin: 0 0 .5rem 0;
+      }
+    }
+  }
+
+}

@@ -7,4 +7,61 @@
   .section-catalog {
     background-color: var(--color-grey-light);
   }
+
+  .section-accordion {
+
+    padding: 5rem 0;
+
+    &__body {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+
+      @include lg {
+        flex-direction: column;
+      }
+    }
+
+    &__info {
+      flex: 0 1 40rem;
+
+      @include lg {
+        flex: 0 1 auto;
+      }
+    }
+
+    &__title {
+      margin: 0 0 2rem 0;
+    }
+
+    &__text {
+      font-weight: 300;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    &__button {
+      margin: 2rem 0 0 0;
+      max-width: 14rem;
+    }
+
+    &__accordion {
+      flex: 0 1 100%;
+      width: 100%;
+
+      @include lg {
+        display: none;
+      }
+
+      &-mobile {
+        margin: 0 0 2rem 0;
+        display: none;
+
+        @include lg {
+          display: block;
+        }
+      }
+    }
+  }
+
 }

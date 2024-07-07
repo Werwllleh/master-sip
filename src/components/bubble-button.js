@@ -1,8 +1,10 @@
 'use client';
 import React, {useEffect, useRef, useState} from 'react';
 import Link from "next/link";
+import {QUESTION} from "@/utils/consts";
+import {Modal} from "antd";
 
-const BubbleButton = ({children, size, link}) => {
+const BubbleButton = ({children, size, link, type, click}) => {
 
   const bubbleBtn = useRef();
   const lastBubbleTimeRef = useRef(Date.now());
@@ -39,6 +41,19 @@ const BubbleButton = ({children, size, link}) => {
     }
   }, [bubbles]);
 
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       {
@@ -54,7 +69,7 @@ const BubbleButton = ({children, size, link}) => {
             ))}
           </Link>
         ) : (
-          <button ref={bubbleBtn} onMouseOver={mouseMove} className={`bubble__button ${size ? size : 'small'}`}>
+          <button onClick={showModal} ref={bubbleBtn} data-modal={type} onMouseOver={mouseMove} className={`bubble__button ${size ? size : 'small'}`}>
             {children}
             {bubbles.map(bubble => (
               <span
@@ -66,6 +81,11 @@ const BubbleButton = ({children, size, link}) => {
           </button>
         )
       }
+      <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
     </>
   );
 };
