@@ -4,29 +4,13 @@ import {Dropdown} from 'antd';
 import {CALL, contactInfo, SMALL} from "@/utils/consts";
 import BubbleButton from "@/components/bubble-button";
 import {phoneNumber} from "@/utils/functions";
-import {useState} from "react";
 
 const PhoneDropdown = () => {
-
-  const [open, setOpen] = useState(false);
-
-  const handleOpenChange = (nextOpen, info) => {
-    console.log(nextOpen, info)
-    if (info.source === 'trigger' || nextOpen) {
-      setOpen(nextOpen);
-    }
-  };
-
-  const hideDropdown = (e) => {
-    console.log(e)
-    setOpen(false)
-  }
 
   return (
     <Dropdown
       placement="bottom"
       className={"phone-dropdown"}
-      onClick={hideDropdown}
       dropdownRender={() => (
         <div className={'phone-dropdown__info'}>
           <div className="phone-dropdown__info-body">
@@ -53,8 +37,6 @@ const PhoneDropdown = () => {
           </div>
         </div>
       )}
-      onOpenChange={handleOpenChange}
-      open={open}
     >
       <div onClick={(e) => e.preventDefault()}>
         <div className="phone-dropdown__row">
