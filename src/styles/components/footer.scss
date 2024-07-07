@@ -10,13 +10,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
+      gap: 1rem;
     }
 
     &__logo {
 
       svg {
         width: 90px;
+
         g {
           transition: fill .3s ease-in-out;
         }
@@ -28,10 +29,40 @@
       align-items: center;
       gap: 1rem;
 
+
+      @include lg {
+        max-width: 23rem;
+        overflow: auto;
+        padding: 0 0 .15rem 0;
+
+        &::-webkit-scrollbar {
+          height: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: var(--color-accent);
+          border-radius: var(--border-radius);
+        }
+
+        &::-webkit-scrollbar-track {
+          border-radius: var(--border-radius);
+        }
+      }
+
+      @include sm {
+        max-width: 13rem;
+        overflow: auto;
+      }
+
       &-item {
+        white-space: nowrap;
         font-size: 1.1rem;
         font-weight: 500;
         color: var(--color-white);
+
+        @include lg {
+          text-align: center;
+        }
 
         &:hover {
           color: var(--color-accent);
@@ -48,6 +79,20 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
+
+      @include lg {
+        gap: 1rem;
+      }
+
+      @include md {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem 1rem;
+      }
+
+      @include sm {
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+      }
     }
 
     &__col {
@@ -55,6 +100,7 @@
       &:nth-child(2) {
         display: flex;
         flex-direction: column;
+        gap: 1.5rem;
       }
 
     }
@@ -67,6 +113,11 @@
       max-width: 23rem;
       font-weight: 200;
 
+      @include sm {
+        max-width: none;
+        font-size: 1rem;
+      }
+
       &:hover {
         color: var(--color-accent);
       }
@@ -77,6 +128,11 @@
       display: flex;
       flex-direction: column;
       gap: 0.3rem;
+
+      @include sm {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
 
       &-item {
 
@@ -114,6 +170,10 @@
         color: var(--color-white);
         margin: 0 0 0.5rem 0;
         font-size: 1.1rem;
+
+        @include sm {
+          font-size: 1rem;
+        }
       }
 
       &-items {
@@ -123,9 +183,14 @@
       }
 
       &-item {
+        white-space: nowrap;
         color: var(--color-white);
         font-size: 1.2rem;
         font-weight: 300;
+
+        @include sm {
+          font-size: 1.1rem;
+        }
 
         &:hover {
           color: var(--color-accent);
@@ -140,6 +205,10 @@
         color: var(--color-white);
         margin: 0 0 .5rem 0;
         font-size: 1.1rem;
+
+        @include sm {
+          font-size: 1rem;
+        }
       }
 
       &-list {
@@ -158,11 +227,21 @@
         color: var(--color-white);
         margin: 0 0 .5rem 0;
         font-size: 1.1rem;
+
+        @include sm {
+          font-size: 1rem;
+        }
       }
+
       &-link {
+        white-space: nowrap;
         color: var(--color-white);
         font-size: 1.2rem;
         font-weight: 300;
+
+        @include sm {
+          font-size: 1.1rem;
+        }
 
         &:hover {
           color: var(--color-accent);
@@ -173,6 +252,16 @@
     &__ordercall {
       margin: 2rem 0 0 0;
       max-width: 22rem;
+
+      @include sm {
+        margin: 1rem 0 0 0;
+
+        .bubble__button {
+          font-size: 1rem !important;
+          padding: 0.7rem !important;
+        }
+      }
+
     }
 
   }
@@ -181,10 +270,17 @@
     padding: 1rem 0;
 
     &__body {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: grid;
+      align-items: flex-start;
+      grid-template-columns: repeat(3, 1fr);
       color: var(--color-white);
+      gap: 1rem;
+
+      @include md {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     &__center {
@@ -192,6 +288,7 @@
       display: flex;
       align-items: center;
       gap: 0.3rem;
+      white-space: nowrap;
 
       h6 {
         line-height: 1;
@@ -206,6 +303,7 @@
 
     &__left {
       a {
+        white-space: nowrap;
         font-weight: 300;
         font-size: 0.9rem;
 
@@ -219,9 +317,29 @@
       display: flex;
       gap: .3rem;
 
+      @include lg {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      @include md {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
       &-item {
+        white-space: nowrap;
         font-size: .8rem;
         letter-spacing: -.03rem;
+
+        @include lg {
+          span {
+            display: none;
+          }
+        }
       }
     }
   }

@@ -2,7 +2,7 @@ export const contactInfo = {
   phones: ['+7(787) 787-87-87', '+7(888) 999-99-99'],
   email: 'contact@master-sip.ru',
   address: {
-    text: <>Респ.&nbsp;Чувашия, г.&nbsp;Чебоксары, улица&nbsp;Беззубова,&nbsp;9</>,
+    text: <>Респ.&nbsp;Чувашия, г.&nbsp;Чебоксары, ул.&nbsp;Беззубова,&nbsp;9</>,
     url: 'https://yandex.ru/maps/-/CDvkYR8Z'
   },
   workTime: <>Пн&nbsp;-&nbsp;Вс: 9:00&nbsp;-&nbsp;18:00</>,
@@ -170,7 +170,7 @@ export const menu = {
         url: '/articles'
       },
       {
-        text: 'Вопрос-ответ',
+        text: 'Вопросы-ответы',
         url: '/faq'
       },
       {

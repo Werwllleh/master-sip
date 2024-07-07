@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
             <div className="footer-center__col">
               <div className="footer-center__phones">
-                <h5>Всегда на связи</h5>
+                <h5>Всегда на связи:</h5>
                 <div className="footer-center__phones-items">
                   {contactInfo.phones.map((phone) => {
                     return <Link key={phoneNumber(phone)} className="footer-center__phones-item" href={`tel:${phoneNumber(phone)}`}>{phone}</Link>
