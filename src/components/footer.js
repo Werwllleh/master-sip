@@ -82,16 +82,16 @@ const Footer = () => {
         <div className="container">
           <div className="footer-bottom__body">
             <div className="footer-bottom__left">
-              <Link href={'/agreement'}>Политка конфиденциальности</Link>
+              <Link href={'/agreement'}>Политика конфиденциальности</Link>
             </div>
             <div className="footer-bottom__center">
               <h6>MASTER SIP</h6>
               <span>{date.getFullYear()}</span>
             </div>
             <div className="footer-bottom__right">
-              {Object.values(businessInfo).map((info, index) => {
+              {Object.values(contactInfo.businessInfo).map((info, index) => {
                 return <p key={info}
-                          className="footer-bottom__right-item">{info}&nbsp;{index !== Object.values(businessInfo).length - 1 &&
+                          className="footer-bottom__right-item">{info}&nbsp;{index !== Object.values(contactInfo.businessInfo).length - 1 &&
                   <span>/</span>}</p>
               })}
             </div>

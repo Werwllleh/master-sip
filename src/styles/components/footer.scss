@@ -315,20 +315,11 @@
 
     &__right {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      max-width: 25rem;
       gap: .3rem;
-
-      @include lg {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      @include md {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
 
       &-item {
         white-space: nowrap;
