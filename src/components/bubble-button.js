@@ -5,7 +5,7 @@ import {Modal} from "antd";
 import {CALL, QUESTION, SMALL} from "@/utils/consts";
 import FormQuestion from "@/components/forms/form-question";
 import FormCall from "@/components/forms/form-call";
-
+import {getScrollbarWidth} from "@/utils/functions";
 
 
 const BubbleButton = ({children, size, link, type, onClick, ...props}) => {
@@ -30,7 +30,7 @@ const BubbleButton = ({children, size, link, type, onClick, ...props}) => {
 
       setBubbles((prevBubbles) => [
         ...prevBubbles,
-        { id: now, left: bubbleX, top: bubbleY },
+        {id: now, left: bubbleX, top: bubbleY},
       ]);
     }
   };
@@ -57,6 +57,19 @@ const BubbleButton = ({children, size, link, type, onClick, ...props}) => {
     setIsModalOpen(false);
   };
 
+  useEffect(() => {
+    const header = document.querySelector('.header');
+
+    if (isModalOpen) {
+      header.style.paddingRight =  `${getScrollbarWidth()}px`;
+    } else {
+      setTimeout(() => {
+        header.style.paddingRight = '';
+      }, 255);
+    }
+
+
+  }, [isModalOpen]);
 
   return (
     <>
@@ -68,28 +81,33 @@ const BubbleButton = ({children, size, link, type, onClick, ...props}) => {
               <span
                 key={bubble.id}
                 className="bubble"
-                style={{ left: `${bubble.left}px`, top: `${bubble.top}px` }}
+                style={{left: `${bubble.left}px`, top: `${bubble.top}px`}}
               />
             ))}
           </Link>
         ) : (
-          <button onClick={(e) => showModal(e)} ref={bubbleBtn} data-modal={type} onMouseOver={mouseMove} className={`bubble__button ${size ? size : SMALL}`}>
+          <button onClick={(e) => showModal(e)} ref={bubbleBtn} data-modal={type} onMouseOver={mouseMove}
+                  className={`bubble__button ${size ? size : SMALL}`}>
             {children}
             {bubbles.map(bubble => (
               <span
                 key={bubble.id}
                 className="bubble"
-                style={{ left: `${bubble.left}px`, top: `${bubble.top}px` }}
+                style={{left: `${bubble.left}px`, top: `${bubble.top}px`}}
               />
             ))}
           </button>
         )
       }
-      <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+      <Modal
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
         <div className="modal-form">
           <div className="modal-form__body">
-            {type === QUESTION && <FormQuestion />}
-            {type === CALL && <FormCall />}
+            {type === QUESTION && <FormQuestion/>}
+            {type === CALL && <FormCall/>}
           </div>
         </div>
       </Modal>

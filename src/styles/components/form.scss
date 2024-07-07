@@ -1,0 +1,37 @@
+.form-custom {
+  font-family: 'Inter', sans-serif;
+
+  &__header {
+    margin: 0 0 1rem 0;
+  }
+
+  &__title {
+    max-width: calc(100% - 2rem);
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0 0 .5rem 0;
+    color: var(--color-semidark);
+  }
+
+  &__text {
+    color: var(--color-semidark);
+    font-size: .9rem;
+    font-weight: 400;
+  }
+
+  .ant-col,
+  .ant-input {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .ant-input-filled:hover,
+  .ant-input-filled:focus {
+    border-color: var(--color-accent);
+  }
+
+  .ant-form-item-label {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-semidark);
+  }
+
+}
