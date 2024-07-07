@@ -2,7 +2,7 @@
 import Logo from "@/components/logo/logo";
 import PhoneDropdown from "@/components/phone-dropdown";
 import BubbleButton from "@/components/bubble-button";
-import {menu} from "@/utils/consts";
+import {CALL, menu, SMALL} from "@/utils/consts";
 
 import HeaderBottomLink from "@/components/header/header-bottom-link";
 import MobileMenu from "@/components/header/mobile-menu";
@@ -58,7 +58,7 @@ const Header = () => {
                 </div>
                 <div className="header__contacts">
                   <div className="header__contacts-order">
-                    <BubbleButton size={'small'}>Заказать звонок</BubbleButton>
+                    <BubbleButton type={CALL} size={SMALL}>Заказать звонок</BubbleButton>
                   </div>
                   <div className="header__phone">
                     <PhoneDropdown/>

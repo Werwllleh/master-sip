@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {businessInfo, contactInfo, menu} from "@/utils/consts";
+import {businessInfo, CALL, contactInfo, MEDIUM, menu} from "@/utils/consts";
 import Logo from "@/components/logo/logo";
 import {phoneNumber} from "@/utils/functions";
 import SocialButton from "@/components/social-button";
@@ -72,7 +72,7 @@ const Footer = () => {
                 <Link className="footer-center__mail-link" href={`mailto:${contactInfo.email}`}>{contactInfo.email}</Link>
               </div>
               <div className="footer-center__ordercall">
-                <BubbleButton size="medium">Заказать звонок</BubbleButton>
+                <BubbleButton type={CALL} size={MEDIUM}>Заказать звонок</BubbleButton>
               </div>
             </div>
           </div>

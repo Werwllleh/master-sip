@@ -1,10 +1,14 @@
 'use client';
 import React, {useEffect, useRef, useState} from 'react';
 import Link from "next/link";
-import {QUESTION} from "@/utils/consts";
 import {Modal} from "antd";
+import {CALL, QUESTION, SMALL} from "@/utils/consts";
+import FormQuestion from "@/components/forms/form-question";
+import FormCall from "@/components/forms/form-call";
 
-const BubbleButton = ({children, size, link, type, click}) => {
+
+
+const BubbleButton = ({children, size, link, type, onClick, ...props}) => {
 
   const bubbleBtn = useRef();
   const lastBubbleTimeRef = useRef(Date.now());
@@ -41,7 +45,6 @@ const BubbleButton = ({children, size, link, type, click}) => {
     }
   }, [bubbles]);
 
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {
@@ -54,11 +57,12 @@ const BubbleButton = ({children, size, link, type, click}) => {
     setIsModalOpen(false);
   };
 
+
   return (
     <>
       {
         link ? (
-          <Link href={link} ref={bubbleBtn} onMouseOver={mouseMove} className={`bubble__button ${size ? size : 'small'}`}>
+          <Link href={link} ref={bubbleBtn} onMouseOver={mouseMove} className={`bubble__button ${size ? size : SMALL}`}>
             {children}
             {bubbles.map(bubble => (
               <span
@@ -69,7 +73,7 @@ const BubbleButton = ({children, size, link, type, click}) => {
             ))}
           </Link>
         ) : (
-          <button onClick={showModal} ref={bubbleBtn} data-modal={type} onMouseOver={mouseMove} className={`bubble__button ${size ? size : 'small'}`}>
+          <button onClick={(e) => showModal(e)} ref={bubbleBtn} data-modal={type} onMouseOver={mouseMove} className={`bubble__button ${size ? size : SMALL}`}>
             {children}
             {bubbles.map(bubble => (
               <span
@@ -82,9 +86,12 @@ const BubbleButton = ({children, size, link, type, click}) => {
         )
       }
       <Modal open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <div className="modal-form">
+          <div className="modal-form__body">
+            {type === QUESTION && <FormQuestion />}
+            {type === CALL && <FormCall />}
+          </div>
+        </div>
       </Modal>
     </>
   );
