@@ -103,6 +103,7 @@ const BubbleButton = ({children, size, link, type, onClick, ...props}) => {
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
+        footer={null}
       >
         <div className="modal-form">
           <div className="modal-form__body">
