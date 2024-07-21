@@ -1,0 +1,112 @@
+.page-not-found {
+
+  &__body {}
+
+  &__image {
+    position: relative;
+    max-width: 42rem;
+    width: 100%;
+    margin: 0 auto;
+    pointer-events: none;
+
+    img {
+
+    }
+  }
+
+  &__code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 9rem;
+    font-weight: 900;
+    color: var(--color-accent);
+
+    @include sm {
+      font-size: 7rem;
+    }
+
+    @include xs {
+      font-size: 5rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 500;
+    margin: 0 0 1rem;
+
+    @include md {
+      font-size: 3rem;
+    }
+
+    @include sm {
+      font-size: 2.6rem;
+    }
+
+    @include xs {
+      font-size: 2.3rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 3rem;
+    font-weight: 200;
+    margin: 0 0 1rem;
+
+    @include md {
+      font-size: 2rem;
+    }
+
+    @include sm {
+      font-size: 1.7rem;
+    }
+
+    @include xs {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__pages-list {
+    margin: 1.25rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem 0.8rem;
+  }
+
+  &__page {
+
+    &-link {
+      font-size: 1.3rem;
+      padding: 0.7rem 1rem;
+      border-radius: var(--border-radius);
+      line-height: 1;
+      white-space: nowrap;
+      transition: background-color .3s ease-in-out, color .3s ease-in-out;
+
+      @include sm {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+
+      &:hover {
+        background-color: var(--color-accent);
+        color: var(--color-white);
+      }
+
+    }
+  }
+
+
+}

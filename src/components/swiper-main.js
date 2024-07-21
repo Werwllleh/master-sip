@@ -43,7 +43,7 @@ const SwiperMain = () => {
                   </div>
                 </div>
                 <div className="swiper-main__slide-bg">
-                  <img src={`./assets/images/main-slider/main-slide${slide.photo}.webp`} alt=""/>
+                  <img src={`/assets/images/main-slider/main-slide${slide.photo}.webp`} alt=""/>
                 </div>
               </div>
             </SwiperSlide>
