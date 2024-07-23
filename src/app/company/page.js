@@ -4,7 +4,39 @@ import LeftBarLayout from "@/components/layouts/leftbar-layout";
 const Page = () => {
   return (
     <LeftBarLayout>
-      fff
+      Главная о компании
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </LeftBarLayout>
   );
 };

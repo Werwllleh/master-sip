@@ -1,8 +1,27 @@
 .page-left-bar {
 
-  &__grid {}
+  &__grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
 
-  &__sidebar {}
+    @include md {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__sidebar {
+
+    .leftbar {
+      position: sticky;
+      top: 11.875rem;
+    }
+
+
+    @include md {
+      display: none;
+    }
+  }
 
   &__content {}
 }

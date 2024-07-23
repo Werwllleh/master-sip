@@ -1,9 +1,9 @@
 import React from 'react';
 import Leftbar from "@/components/leftbar";
 
-const LeftBarLayout = ({children, pageClassname}) => {
+const LeftBarLayout = ({children}) => {
   return (
-    <div className={`page page-left-bar ${pageClassname}`}>
+    <div className="page page-left-bar">
       <div className="container">
         <div className="page-left-bar__grid">
           <div className="page-left-bar__sidebar">

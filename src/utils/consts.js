@@ -103,10 +103,6 @@ export const menu = {
     },
     childLinks: [
       {
-        text: 'О компании',
-        url: '/about'
-      },
-      {
         text: 'Лицензии',
         url: '/licenses'
       },
