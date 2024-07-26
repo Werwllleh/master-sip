@@ -70,18 +70,40 @@
   height: 100%;
 
   &__body {
+    display: flex;
+    flex-direction: column;
     padding: 1rem 2rem 3rem;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
   }
 
   &__logo {
-    margin: 0 0 2rem 0;
+    margin: 0 0 1.5rem 0;
+
+    .site-logo {
+      justify-content: center;
+    }
+
     svg {
-      max-width: 5.5rem;
+      max-width: 7.5rem;
     }
   }
 
   &__nav {
+    margin: 0 0 2rem 0;
   }
 
   &__list {
@@ -90,7 +112,8 @@
     gap: 1rem;
   }
 
-  &__item {}
+  &__item {
+  }
 
   &__main-link {
     display: flex;
@@ -109,6 +132,20 @@
     gap: .8rem;
     margin: .6rem 0 0 0;
     padding: 0 0 0 1rem;
+  }
+
+  &__footer {
+    margin: auto 0 0 0;
+  }
+
+  &__socials-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: .4rem;
+  }
+
+  &__social {
   }
 }
 

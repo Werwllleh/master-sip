@@ -16,6 +16,7 @@ const Leftbar = () => {
 
   }, [pathname]);
 
+
   return (
     <div className="leftbar">
       <div className="leftbar__body">
@@ -24,13 +25,13 @@ const Leftbar = () => {
             <nav className="leftbar__menu">
               <ul className="leftbar__menu-list">
                 <li className="leftbar__menu-item">
-                  <Link className={`leftbar__menu-link ${pathname === currentMenu.baseUrl.url ? 'active' : ''}`}
+                  <Link className={`leftbar__menu-link ${pathname === currentMenu?.baseUrl.url ? 'active' : ''}`}
                         key={currentMenu.baseUrl.url} href={currentMenu.baseUrl.url}><span>{currentMenu.baseUrl.text}</span></Link>
                 </li>
                 {currentMenu.childLinks && currentMenu.childLinks.map((link, index) => (
                   <li className="leftbar__menu-item" key={currentMenu.baseUrl.url + link.url}>
                     <Link
-                      className={`leftbar__menu-link ${pathname === currentMenu.baseUrl.url + link.url ? 'active' : ''}`}
+                      className={`leftbar__menu-link ${pathname === currentMenu?.baseUrl.url + link.url ? 'active' : ''}`}
                       href={currentMenu.baseUrl.url + link.url}><span>{link.text}</span></Link>
                   </li>
                 ))}

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Logo = ({height, width, hex}) => {
   return (
-    <Link href={"/"}>
+    <Link className="site-logo" href={"/"}>
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
            width={width} height={height} viewBox="0 0 2000.000000 1500.000000"
            preserveAspectRatio="xMidYMid meet">

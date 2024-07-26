@@ -24,3 +24,11 @@ export function getScrollbarWidth() {
   return scrollbarWidth;
 
 }
+
+export function getWindowSize() {
+  if (typeof window !== "undefined") {
+    const {outerWidth, outerHeight} = window;
+
+    return {outerWidth, outerHeight};
+  }
+}

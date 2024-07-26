@@ -5,7 +5,6 @@ import BubbleButton from "@/components/bubble-button";
 import {CALL, menu, SMALL} from "@/utils/consts";
 
 import HeaderBottomLink from "@/components/header/header-bottom-link";
-import MobileMenu from "@/components/header/mobile-menu";
 import MobileMenuButton from "@/components/header/mobile-menu-button";
 import {useEffect, useState} from "react";
 import {usePathname} from "next/navigation";
@@ -85,7 +84,6 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <MobileMenu />
     </>
   );
 };

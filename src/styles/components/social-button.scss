@@ -15,7 +15,8 @@
   &.vk {}
   &.instagram {}
 
-  &:hover {
+  &:hover,
+  &.active {
 
     &.whatsapp {
       background-color: #65BC54;

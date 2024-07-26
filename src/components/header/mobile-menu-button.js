@@ -1,15 +1,40 @@
 'use client';
-import React, {useState} from 'react';
-import {menu} from "@/utils/consts";
-import Link from 'next/link';
-import {Drawer, SwipeableDrawer} from '@mui/material';
+import React, {useEffect, useState} from 'react';
+import {contactInfo, menu} from "@/utils/consts";
+import {SwipeableDrawer} from '@mui/material';
 import Logo from "@/components/logo/logo";
 import {CaretDownFilled} from "@ant-design/icons";
+import DropMenuItem from "@/components/header/drop-menu-item";
+import SocialButton from "@/components/social-button";
+import {getWindowSize} from "@/utils/functions";
 
 
 const MobileMenuButton = () => {
 
-  const [state, setState] = useState(false)
+  const [state, setState] = useState(false);
+
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (windowSize.outerWidth > 768) {
+      setState(false)
+    }
+
+  }, [windowSize]);
 
   const clickMenu = () => {
     setState(!state)
@@ -31,60 +56,45 @@ const MobileMenuButton = () => {
   const iOS =
     typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
+
+
   return (
     <>
       <div onClick={clickMenu} className={`hamburger ${state ? 'open' : ''}`}>
         <div className={'hamburger__line'}></div>
       </div>
-      {/*<div className="mobile-menu">
-        <div className="mobile-menu__wrap">
-          <div className="mobile-menu__body">
-            <ul className="mobile-menu__list">
-              {Object.values(menu).map((link) => (
-                <li key={link.baseUrl.url} className="mobile-menu__list-item">
-                  <Link onClick={() => setOpen(false)} className="mobile-menu__list-link" href={link.baseUrl.url}>
-                    {link.baseUrl.text}
-                  </Link>
-                </li>))}
-            </ul>
-          </div>
-        </div>
-      </div>*/}
       <SwipeableDrawer
         className={"mobile-menu-drawer"}
         anchor={'right'}
         disableBackdropTransition={!iOS}
         disableDiscovery={iOS}
         open={state}
+        onOpen={() => setState(true)}
         onClose={() => setState(false)}
       >
         <div className="mobile-menu">
           <div className="mobile-menu__body">
             <div className="mobile-menu__logo">
-              <Logo />
+              <Logo/>
             </div>
             <nav className="mobile-menu__nav">
               <ul className="mobile-menu__list">
                 {Object.values(menu).map((link) => (
-                  <li key={link.baseUrl.url} className="mobile-menu__item">
-                    <div className="mobile-menu__main-link">
-                      <Link onClick={() => setState(false)} href={link.baseUrl.url} className="mobile-menu__link">
-                        {link.baseUrl.text}
-                      </Link>
-                      {link.childLinks && <span><CaretDownFilled/></span>}
-                    </div>
-                    {link.childLinks && (
-                      <div className="mobile-menu__sublinks">
-                        {link.childLinks.map((subLink) => (
-                          <Link key={subLink.url} onClick={() => setState(false)} href={link.baseUrl.url + subLink.url} className="mobile-menu__link">
-                            {subLink.text}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </li>))}
+                  <DropMenuItem key={link.baseUrl.url} link={link} icon={<CaretDownFilled/>} closeClick={() => setState(false)}/>
+                ))}
               </ul>
             </nav>
+            <div className="mobile-menu__footer">
+              <ul className="mobile-menu__socials-list">
+                {Object.values(contactInfo.socials).map((social) => {
+                  return (
+                    <li className="mobile-menu__social" key={social.url} >
+                      <SocialButton colored={true} icon={social.icon} link={social.url} classLink={social.classLink}/>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </SwipeableDrawer>
