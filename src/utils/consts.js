@@ -1,3 +1,13 @@
+import Timerline from "@/components/icons/partners/timerline.svg";
+import Step from "@/components/icons/partners/CHZSP.svg";
+import OknaAP from "@/components/icons/partners/oknap.svg";
+import Sber from "@/components/icons/partners/sber.svg";
+import VTB from "@/components/icons/partners/vtb.svg";
+import Alfa from "@/components/icons/partners/alfa.svg";
+import TBank from "@/components/icons/partners/tbank.svg";
+import GPB from "@/components/icons/partners/gpb.svg";
+import RSHB from "@/components/icons/partners/rshb.svg";
+
 export const SMALL = 'small';
 export const MEDIUM = 'medium';
 export const LARGE = 'large';
@@ -374,4 +384,53 @@ export const faq = [
       <p></p>
     </>
   },
+]
+
+export const partners = [
+  {
+    partnersGroup: 'Банки - партнеры',
+    partnersList: [
+      {
+        icon: <><Sber /></>,
+        link: 'http://www.sberbank.ru/'
+      },
+      {
+        icon: <><VTB /></>,
+        link: 'https://www.vtb.ru/'
+      },
+      {
+        icon: <><TBank /></>,
+        link: 'https://www.tbank.ru/'
+      },
+      {
+        icon: <><Alfa /></>,
+        link: 'https://alfabank.ru/'
+      },
+      {
+        icon: <><GPB /></>,
+        link: 'https://www.gazprombank.ru/'
+      },
+      {
+        icon: <><RSHB /></>,
+        link: 'https://www.rshb.ru/'
+      },
+    ]
+  },
+  {
+    partnersGroup: 'Производственные партнеры',
+    partnersList: [
+      {
+        icon: <><OknaAP /></>,
+        link: 'https://xn----7sbhqqjkgebi5npb.xn--p1ai/'
+      },
+      {
+        icon: <><Step /></>,
+        link: 'https://www.ctep.ru/'
+      },
+      {
+        icon: <><Timerline /></>,
+        link: 'https://xn--80ajigieluo.xn--p1ai/'
+      },
+    ]
+  }
 ]

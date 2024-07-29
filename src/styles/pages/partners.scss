@@ -1,0 +1,40 @@
+.page-partners {
+
+  &__body {}
+
+  &__groups {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__group {
+    padding: 2rem 0;
+
+    background-color: var(--color-grey-light);
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 0 1.5rem;
+    font-weight: 500;
+  }
+
+  &__list {
+    margin: 0 auto;
+    max-width: 62.5rem;
+
+    .swiper-wrapper {
+      align-items: center !important;
+    }
+  }
+
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
