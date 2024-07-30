@@ -10,23 +10,25 @@
 
   &__group {
     padding: 2rem 0;
-
-    background-color: var(--color-grey-light);
   }
 
   &__title {
     text-align: center;
     font-size: 2rem;
-    margin: 0 0 1.5rem;
+    margin: 0 0 2rem;
     font-weight: 500;
   }
 
   &__list {
     margin: 0 auto;
-    max-width: 62.5rem;
+    //max-width: 62.5rem;
 
     .swiper-wrapper {
       align-items: center !important;
+    }
+
+    .swiper-slide {
+      //background-color: var(--color-grey-light);
     }
   }
 
