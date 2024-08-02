@@ -434,3 +434,24 @@ export const partners = [
     ]
   }
 ]
+
+export const objectPlaces = [
+  {
+    id: 1,
+    title: 'Мичуринец-2',
+    city: 'Чебоксары',
+    coordinates: [56.074964, 47.320113]
+  },
+  {
+    id: 2,
+    title: 'Ягудары-1',
+    city: 'Ягудары',
+    coordinates: [56.074273, 47.331621]
+  },
+  {
+    id: 3,
+    title: 'Кугеси-1',
+    city: 'Кугеси',
+    coordinates: [56.022378, 47.277004]
+  },
+]

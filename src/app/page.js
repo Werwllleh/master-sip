@@ -4,6 +4,7 @@ import SectionCatalog from "@/components/sections/section-catalog";
 import Accordion from "@/components/accordion";
 import {faq, QUESTION, SMALL} from "@/utils/consts";
 import BubbleButton from "@/components/bubble-button";
+import SectionMap from "@/components/sections/section-map";
 
 const Home = () => {
 
@@ -33,6 +34,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <SectionMap/>
     </div>
   );
 };

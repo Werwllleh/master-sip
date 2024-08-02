@@ -1,0 +1,50 @@
+.section-map {
+
+  &__title {
+    margin: 0 0 1.5rem;
+  }
+
+  &__map {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .map-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2rem 1rem;
+    background-color: rgba(249, 249, 249, 0.86);
+    max-width: 15rem;
+    width: 100%;
+    opacity: 0;
+    height: 0;
+    pointer-events: none;
+    box-shadow: none;
+    transition: opacity .3s ease-in-out, height .3s ease-in-out, box-shadow .3s ease-in-out;
+
+    &.show {
+      box-shadow: 0px 0px 17px 0px #b9b9b9;
+      height: 100%;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &__close {
+      cursor: pointer;
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+
+      svg {
+        fill: var(--color-accent);
+      }
+    }
+
+    &__body {
+
+    }
+
+  }
+}
+
