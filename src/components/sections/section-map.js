@@ -38,6 +38,8 @@ const SectionMap = () => {
   }, []);
 
   const map = useRef(null);
+  const mapWrapper = useRef(null);
+  const mapInfo = useRef(null);
 
   const setMapRef = useCallback((instance) => {
     map.current = instance;
@@ -60,7 +62,7 @@ const SectionMap = () => {
 
   const defaultState = {
     center: [57.626579, 39.893691],
-    zoom: 6,
+    zoom: window.innerWidth < 576 ? 4.5 : 6,
     controls: [],
   };
 
@@ -70,9 +72,20 @@ const SectionMap = () => {
 
     if (map.current) {
       map.current.setCenter(defaultState.center);
-      map.current.setZoom(defaultState.zoom, {duration: 500});
+      map.current.setZoom(defaultState.zoom);
     }
   }
+
+  useEffect(() => {
+    if (mapWrapper.current && mapInfo.current) {
+      if (baloonInfo) {
+        mapInfo.current.style.maxHeight = `${window.innerWidth < 576 ? mapInfo.current.scrollHeight : mapWrapper.current.scrollHeight }px`;
+      } else {
+        mapInfo.current.style.maxHeight = '0px';
+      }
+    }
+
+  }, [baloonInfo]);
 
   return (
     <div className="section-map">
@@ -84,10 +97,10 @@ const SectionMap = () => {
         ns: "use-load-option",
         load: "package.full"
       }}>
-        <div className="section-map__map">
+        <div ref={mapWrapper} className="section-map__map">
           <Map
             defaultState={defaultState}
-            height={'30rem'}
+            height={window.innerWidth < 576 ? '15rem' : '30rem'}
             width={'100%'}
             instanceRef={setMapRef}
           >
@@ -106,7 +119,7 @@ const SectionMap = () => {
               )
             })}
           </Map>
-          <div className={`section-map__modal map-modal ${baloonInfo ? 'show' : ''}`}>
+          <div ref={mapInfo} className={`section-map__modal map-modal ${baloonInfo ? 'show' : ''}`}>
             <div className="map-modal__body">
               {baloonInfo && (
                 <>
@@ -134,7 +147,6 @@ const SectionMap = () => {
                                   preview={{
                                     mask: 'Просмотр',
                                     src: `/assets/images/objects/${baloonInfo.id}/${objectImage}`,
-                                    toolbarRender: () => null
                                   }}
                                   className="map-modal__image"
                                   src={`/assets/images/objects/min/${baloonInfo.id}/${addSuffixToFilename(objectImage, '_p')}`}
