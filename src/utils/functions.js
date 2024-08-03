@@ -1,3 +1,5 @@
+
+
 export const phoneNumber = (phoneNumber) => {
   return phoneNumber.replace(/[^\d+]/g, '');
 }
@@ -32,3 +34,11 @@ export function getWindowSize() {
     return {outerWidth, outerHeight};
   }
 }
+
+export const addSuffixToFilename = (filename, suffix) => {
+  const dotIndex = filename.lastIndexOf('.');
+  if (dotIndex === -1) return filename; // Если нет точки, возвращаем оригинальное имя
+  const name = filename.substring(0, dotIndex);
+  const extension = filename.substring(dotIndex);
+  return `${name}${suffix}${extension}`;
+};

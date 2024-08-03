@@ -8,7 +8,7 @@ import FormCall from "@/components/forms/form-call";
 import {getScrollbarWidth} from "@/utils/functions";
 
 
-const BubbleButton = ({children, size, link, type, onClick, ...props}) => {
+const BubbleButton = ({children, size, link, target, type, onClick, ...props}) => {
 
   const bubbleBtn = useRef();
   const lastBubbleTimeRef = useRef(Date.now());
@@ -75,7 +75,7 @@ const BubbleButton = ({children, size, link, type, onClick, ...props}) => {
     <>
       {
         link ? (
-          <Link href={link} ref={bubbleBtn} onMouseOver={mouseMove} className={`bubble__button ${size ? size : SMALL}`}>
+          <Link target={target ? target : ''} href={link} ref={bubbleBtn} onMouseOver={mouseMove} className={`bubble__button ${size ? size : SMALL}`}>
             {children}
             {bubbles.map(bubble => (
               <span

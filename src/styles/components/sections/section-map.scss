@@ -13,9 +13,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem 1rem;
     background-color: rgba(249, 249, 249, 0.91);
-    max-width: 15rem;
+    max-width: 20rem;
     width: 100%;
     opacity: 0;
     height: 0;
@@ -24,25 +24,101 @@
     transition: opacity .3s ease-in-out, height .3s ease-in-out, box-shadow .3s ease-in-out;
 
     &.show {
-      box-shadow: 0px 0px 17px 0px #b9b9b9;
+      box-shadow: 0 0 17px 0 #b9b9b9;
       height: 100%;
       opacity: 1;
       pointer-events: all;
     }
 
     &__close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      position: absolute;
-      top: .5rem;
-      right: .5rem;
+
 
       svg {
+        width: 1.5rem;
+        height: 1.5rem;
         fill: var(--color-accent);
       }
     }
 
-    &__body {
+    &__loader {
+      margin: 1rem 0 0 0;
+      display: flex;
+      justify-content: center;
+    }
 
+    &__body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__header {
+      width: 100%;
+      z-index: 2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      background-color: rgba(249, 249, 249, 0.91);
+    }
+
+    &__info {
+      overflow-y: auto;
+      max-height: 11rem;
+      padding: 0 .2rem 0 0;
+      margin: 1rem -.2rem 0 0;
+
+      &::-webkit-scrollbar {
+        width: 2px;
+        height: 8px;
+        background-color: transparent; /* or add it to the track */
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--color-accent);
+      }
+    }
+
+    &__title {
+      font-size: 1.4rem;
+    }
+
+    &__images {
+      margin: 1rem 0 0 0;
+    }
+
+    .swiper-slide {
+      width: auto;
+      max-width: 40%;
+    }
+
+    &__image {
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: .2rem;
+
+      li {
+        span {
+          font-weight: 300;
+        }
+
+        font-weight: 500;
+      }
+    }
+
+    &__note {
+      margin: 1rem 0 0 0;
+      font-weight: 300;
+    }
+
+    &__link {
+      margin: 1rem 0 0 0;
     }
 
   }
