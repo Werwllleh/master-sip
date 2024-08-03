@@ -40,6 +40,7 @@ const SectionMap = () => {
   const map = useRef(null);
   const mapWrapper = useRef(null);
   const mapInfo = useRef(null);
+  const mapInfoBody = useRef(null);
 
   const setMapRef = useCallback((instance) => {
     map.current = instance;
@@ -48,6 +49,12 @@ const SectionMap = () => {
 
   const [baloonInfo, setBaloonInfo] = useState(null);
   const [objectImages, setObjectImages] = useState([]);
+  const [mapState, setMapState] = useState({
+    center: [57.626579, 39.893691],
+    zoom: 6,
+    controls: [],
+    mapHeight: '30rem'
+  });
 
   const handleClickPlacemark = (object) => {
     getObjectImages(object.id).then(res => setObjectImages(res))
@@ -60,32 +67,39 @@ const SectionMap = () => {
     }
   }
 
-  const defaultState = {
-    center: [57.626579, 39.893691],
-    zoom: window.innerWidth < 576 ? 4.5 : 6,
-    controls: [],
-  };
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setMapState((prevState) => ({
+        ...prevState,
+        zoom: window.innerWidth < 576 ? 4.5 : 6,
+        mapHeight: window.innerWidth < 576 ? '15rem' : '30rem'
+      }));
+    }
+  }, []);
+
 
   const hideBaloonInfo = () => {
     setBaloonInfo(null);
     setObjectImages([]);
 
     if (map.current) {
-      map.current.setCenter(defaultState.center);
-      map.current.setZoom(defaultState.zoom);
+      map.current.setCenter(mapState.center);
+      map.current.setZoom(mapState.zoom);
     }
   }
 
   useEffect(() => {
     if (mapWrapper.current && mapInfo.current) {
       if (baloonInfo) {
-        mapInfo.current.style.maxHeight = `${window.innerWidth < 576 ? mapInfo.current.scrollHeight : mapWrapper.current.scrollHeight }px`;
+        if (typeof window !== 'undefined') {
+          mapInfo.current.style.maxHeight = `${window.innerWidth < 576 ? mapInfo.current.scrollHeight : mapWrapper.current.scrollHeight}px`;
+        }
       } else {
         mapInfo.current.style.maxHeight = '0px';
       }
     }
 
-  }, [baloonInfo]);
+  }, [baloonInfo, mapWrapper]);
 
   return (
     <div className="section-map">
@@ -99,8 +113,8 @@ const SectionMap = () => {
       }}>
         <div ref={mapWrapper} className="section-map__map">
           <Map
-            defaultState={defaultState}
-            height={window.innerWidth < 576 ? '15rem' : '30rem'}
+            defaultState={mapState}
+            height={mapState.mapHeight}
             width={'100%'}
             instanceRef={setMapRef}
           >
@@ -120,7 +134,7 @@ const SectionMap = () => {
             })}
           </Map>
           <div ref={mapInfo} className={`section-map__modal map-modal ${baloonInfo ? 'show' : ''}`}>
-            <div className="map-modal__body">
+            <div ref={mapInfoBody} className="map-modal__body">
               {baloonInfo && (
                 <>
                   <div className="map-modal__header">
