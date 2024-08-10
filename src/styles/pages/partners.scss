@@ -48,6 +48,7 @@
     transition: background-color .3s ease-in-out;
 
     @include sm {
+      background-color: var(--color-grey-light);
       padding: 3rem 2rem;
     }
 
