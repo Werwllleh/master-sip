@@ -193,10 +193,6 @@ export const menu = {
         text: 'Вопросы-ответы',
         url: '/faq'
       },
-      {
-        text: 'Вакансии',
-        url: '/vacancy'
-      },
     ]
   }
 }

@@ -22,24 +22,13 @@ const Page = () => {
               <div key={index} className="page-partners__group">
                 <h3 className="page-partners__title">{item.partnersGroup}</h3>
                 <div className="page-partners__list">
-                  <Swiper
-                    modules={[Autoplay]}
-                    autoplay={{delay: 4000, pauseOnMouseEnter: true}}
-                    loop={true}
-                    spaceBetween={30}
-                    slidesPerView={4}
-                    centeredSlides={true}
-                  >
-                    {item.partnersList.map((partner, index) => {
-                      return (
-                        <SwiperSlide key={index}>
-                          <Link className="page-partners__link" target={"_blank"} href={partner.link}>
-                            {partner.icon}
-                          </Link>
-                        </SwiperSlide>
-                      )
-                    })}
-                  </Swiper>
+                  {item.partnersList.map((partner, index) => {
+                    return (
+                      <Link key={index} className="page-partners__link" target={"_blank"} href={partner.link}>
+                        {partner.icon}
+                      </Link>
+                    )
+                  })}
                 </div>
               </div>
             ))}
