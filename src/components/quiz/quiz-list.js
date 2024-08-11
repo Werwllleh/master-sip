@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Checkbox, Flex, Radio} from 'antd';
+import {Checkbox, Radio} from 'antd';
 
 const QuizList = ({data}) => {
 
