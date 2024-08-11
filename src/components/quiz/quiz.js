@@ -47,7 +47,7 @@ const Quiz = ({data}) => {
           {currentType === 'cards' && (
             <div className="quiz__cards">
               {currentData.items?.map(card => {
-                return <QuizCard card={card}/>
+                return <QuizCard key={card.value} card={card}/>
               })}
             </div>
           )}
