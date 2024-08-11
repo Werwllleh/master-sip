@@ -1,0 +1,49 @@
+.page-faq {
+
+  &__body {
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0 0 2rem 0;
+  }
+
+  &__question {
+    margin: 2rem 0 0 0;
+    padding: 2rem;
+    background-color: var(--color-grey-light);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 4rem;
+
+    @include xl {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @include sm {
+      padding: 2rem 1rem;
+    }
+
+    &-text {
+      font-weight: 400;
+      text-align: justify;
+      line-height: 1.5;
+      font-size: 1.05rem;
+
+      span {
+        display: block;
+        margin: .8rem 0 0 0;
+        font-weight: 500;
+      }
+    }
+
+    &-button {
+      max-width: 20rem;
+      width: 100%;
+    }
+  }
+}
