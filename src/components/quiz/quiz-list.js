@@ -12,7 +12,7 @@ const QuizList = ({data}) => {
       {data.selection === 'single' ? (
         <Radio.Group buttonStyle="solid">
           {data.items.map(item => {
-            return <Radio.Button value={item.value}>{item.value}</Radio.Button>
+            return <Radio.Button key={item.value} value={item.value}>{item.value}</Radio.Button>
           })}
         </Radio.Group>
       ) : (
@@ -23,7 +23,7 @@ const QuizList = ({data}) => {
               console.log(`checked = ${e.target.checked}`);
             };
 
-            return <Checkbox onChange={onChange}>{item.value}</Checkbox>
+            return <Checkbox key={item.value} onChange={onChange}>{item.value}</Checkbox>
           })}
         </>
       )}
