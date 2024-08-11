@@ -2,7 +2,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import Link from "next/link";
 import {Modal} from "antd";
-import {CALL, QUESTION, SMALL} from "@/utils/consts";
+import {CALL, QUESTION, SIMPLE, SMALL} from "@/utils/consts";
 import FormQuestion from "@/components/forms/form-question";
 import FormCall from "@/components/forms/form-call";
 import {getScrollbarWidth} from "@/utils/functions";
@@ -86,7 +86,7 @@ const BubbleButton = ({children, size, link, target, type, onClick, ...props}) =
             ))}
           </Link>
         ) : (
-          <button onClick={(e) => showModal(e)} ref={bubbleBtn} data-modal={type} onMouseOver={mouseMove}
+          <button onClick={type !== SIMPLE ? (e) => showModal(e) : onClick} ref={bubbleBtn} data-modal={type} onMouseOver={mouseMove}
                   className={`bubble__button ${size ? size : SMALL}`}>
             {children}
             {bubbles.map(bubble => (

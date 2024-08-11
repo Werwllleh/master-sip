@@ -4,6 +4,11 @@ import {faq, MEDIUM, QUESTION} from "@/utils/consts";
 import Accordion from "@/components/accordion";
 import BubbleButton from "@/components/bubble-button";
 
+export const metadata = {
+  title: "MASTER SIP | Вопросы-ответы",
+  description: "Строительство домов из SIP панелей в Поволжье",
+};
+
 const Page = () => {
   return (
     <LeftBarLayout>

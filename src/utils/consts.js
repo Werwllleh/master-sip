@@ -8,6 +8,7 @@ import TBank from "@/components/icons/partners/tbank.svg";
 import GPB from "@/components/icons/partners/gpb.svg";
 import RSHB from "@/components/icons/partners/rshb.svg";
 
+export const SIMPLE = 'simple';
 export const SMALL = 'small';
 export const MEDIUM = 'medium';
 export const LARGE = 'large';

@@ -2,6 +2,11 @@ import React from 'react';
 import {menu} from "@/utils/consts";
 import Link from "next/link";
 
+export const metadata = {
+  title: "MASTER SIP | 404",
+  description: "Строительство домов из SIP панелей в Поволжье",
+};
+
 const NotFound = () => {
   return (
     <div className="page page-not-found">

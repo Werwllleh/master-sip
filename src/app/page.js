@@ -5,6 +5,13 @@ import Accordion from "@/components/accordion";
 import {faq, QUESTION, SMALL} from "@/utils/consts";
 import BubbleButton from "@/components/bubble-button";
 import SectionMap from "@/components/sections/section-map";
+import Quiz from "@/components/quiz/quiz";
+import {quizCalc} from "@/utils/quiz-data";
+
+export const metadata = {
+  title: "MASTER SIP | Главная",
+  description: "Строительство домов из SIP панелей в Поволжье",
+};
 
 const Home = () => {
 
@@ -14,6 +21,11 @@ const Home = () => {
         <SwiperMain/>
       </section>
       <SectionAchievements/>
+      <section className="section-quiz">
+        <div className="container">
+          <Quiz data={quizCalc} />
+        </div>
+      </section>
       <SectionCatalog/>
       <section className="section-accordion">
         <div className="container">
