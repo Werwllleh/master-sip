@@ -5,7 +5,7 @@ import {useQuizStore} from "@/store/store-quiz";
 import BubbleButton from "@/components/bubble-button";
 import {SIMPLE} from "@/utils/consts";
 import {Progress} from "antd";
-import QuizCard from "@/components/quiz/quiz-cards";
+import QuizCard from "@/components/quiz/quiz-card";
 import QuizList from "@/components/quiz/quiz-list";
 
 const Quiz = ({data}) => {
@@ -24,10 +24,10 @@ const Quiz = ({data}) => {
 
   useEffect(() => {
     if (currentType !== 'phone' && currentType !== 'thanks') {
-      setCurrentData(data.filter((step, index) => index === currentStep)[0])
+      setCurrentData(data[currentStep])
     }
 
-  }, [currentType]);
+  }, [data, currentType]);
 
   useEffect(() => {
     updateUsers(data.length - 1)

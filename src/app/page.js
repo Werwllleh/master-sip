@@ -21,11 +21,11 @@ const Home = () => {
         <SwiperMain/>
       </section>
       <SectionAchievements/>
-      <section className="section-quiz">
+      {/*<section className="section-quiz">
         <div className="container">
           <Quiz data={quizCalc} />
         </div>
-      </section>
+      </section>*/}
       <SectionCatalog/>
       <section className="section-accordion">
         <div className="container">
@@ -35,7 +35,7 @@ const Home = () => {
               <div className="section-accordion__accordion-mobile">
                 <Accordion items={faq.slice(0, 4)}/>
               </div>
-              <p className="section-accordion__text">Для получения допольнительной консультации свяжитесь с нами по электронной почте или телефону для получения. Мы поделимся подробностями и предложим индивидуальные условия сотрудничества.</p>
+              <p className="section-accordion__text">Для получения дополнительной консультации свяжитесь с нами по электронной почте или телефону для получения. Мы поделимся подробностями и предложим индивидуальные условия сотрудничества.</p>
               <div className="section-accordion__button">
                 <BubbleButton type={QUESTION} size={SMALL}>Задать вопрос</BubbleButton>
               </div>

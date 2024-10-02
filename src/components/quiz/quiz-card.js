@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 const QuizCard = ({card}) => {
 
   useEffect(() => {
-    console.log(card)
+    // console.log(card)
   }, [card]);
 
   const [select, setSelect] = useState(false)

@@ -20,23 +20,6 @@ import {addSuffixToFilename} from "@/utils/functions";
 
 const SectionMap = () => {
 
-
-  useEffect(() => {
-    const originalConsoleError = console.error;
-
-    console.error = (...args) => {
-      if (typeof args[0] === "string" && /defaultProps/.test(args[0])) {
-        return;
-      }
-
-      originalConsoleError(...args);
-    };
-
-    return () => {
-      console.error = originalConsoleError;
-    };
-  }, []);
-
   const map = useRef(null);
   const mapWrapper = useRef(null);
   const mapInfo = useRef(null);
